@@ -50,6 +50,9 @@ public class User {
         return age;
     }
 
+    public boolean authenticate(String username, String password) {
+        return this.username.equals(username) && this.password.equals(User.hashPassword(password));
+    }
 
     public static String hashPassword(String input) {
         try {
